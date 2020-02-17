@@ -1,0 +1,17 @@
+#### Table of contents
+
+1. [Sceptre](#sceptre)
+2. [About](#about)
+3. [Features](#features)
+4. [Benefits](#benefits)
+5. [Install](#install)
+    - [Using pip](#using-pip)
+    - [Using Docker Image](#using-docker-image)
+6. [Migrate v1 to v2](#migrate-v1-to-v2)
+7. [V1 End of Life Notice](#v1-end-of-life-notice)
+8. [Example](#example)
+    - [Usage](#usage)
+    - [CLI](#cli)
+    - [Python](#python)
+    - [Tutorial and Documentation](#tutorial-and-documentation)
+    - [Contributing](#contributing)

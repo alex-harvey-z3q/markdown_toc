@@ -1,0 +1,17 @@
+---
+language: ruby
+rvm:
+  - 1.9
+  - 2.0
+  - 2.1
+  - 2.4
+  - 2.5
+  - 2.6
+  - 2.7
+script: 'bundle exec rake'
+notifications:
+  email:
+    recipients:
+      - 'alexharv074@gmail.com'
+    on_success: never
+    on_failure: always
