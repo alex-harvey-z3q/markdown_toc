@@ -18,7 +18,7 @@ Install by copying the script from the master branch:
 
 ```text
 ▶ curl \
-  https://raw.githubusercontent.com/alexharv074/markdown_toc/master/mdtoc.rb \
+  https://raw.githubusercontent.com/alexharv074/markdown_toc/master/mdtoc.rb -o \
   /usr/local/bin/mdtoc.rb
 ```
 
