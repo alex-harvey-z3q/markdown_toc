@@ -34,7 +34,14 @@ Usage: mdtoc.rb FILE.md [TOP [MAX]] [-h]
      MAX              maximum heading level (default 4)
 ```
 
-## Examples
+On Mac OS X, the `pbcopy` command is useful, for example:
+
+```text
+▶ mdtoc.rb README.md | pbcopy
+▶ vim README.md # then paste in the ToC!
+```
+
+## More examples
 
 [Look](./spec/tests_spec.rb#L8) [in](./spec/tests_spec.rb#L15) [the](./spec/tests_spec.rb#L22) [tests](./spec/tests_spec.rb#L29).
 
