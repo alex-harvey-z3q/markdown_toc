@@ -1,6 +1,6 @@
 # mdtoc.rb
 
-Release 1.0.0.
+Release 1.0.1.
 
 [![Build Status](https://img.shields.io/travis/alexharv074/markdown_toc.svg)](https://travis-ci.org/alexharv074/markdown_toc)
 
