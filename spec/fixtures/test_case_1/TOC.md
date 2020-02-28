@@ -11,7 +11,7 @@
     * [Defined types](#defined-types)
         - [firewall_multi](#firewall_multi)
     * [Functions](#functions)
-        - [firewall_multi](#firewall_multi)
+        - [firewall_multi](#firewall_multi-2)
     * [Examples](#examples)
         - [Array of sources](#array-of-sources)
         - [Arrays of sources and destinations](#arrays-of-sources-and-destinations)

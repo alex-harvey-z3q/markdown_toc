@@ -21,6 +21,8 @@ class ToCWriter
     @level  = ""
     @header = ""
     @start  = ""
+    @anchor = ""
+    @seen = []
   end
 
   def write
@@ -32,10 +34,10 @@ class ToCWriter
       @level, @header = line.match(/^(#+) *(.*) *$/).captures
       next if ignore_this_header?
 
-      ref = header_to_ref
+      set_anchor
       set_start
 
-      puts "#{@start} [#{@header}](##{ref})"
+      puts "#{@start} [#{@header}](##{@anchor})"
     end
   end
 
@@ -47,11 +49,25 @@ class ToCWriter
       @level.length > @max
   end
 
-  def header_to_ref
-    @header
+  def set_anchor
+    @anchor = @header
       .downcase
       .gsub(/[^a-z\d_\- ]+/, "")
       .gsub(/ /, "-")
+    update_if_seen
+  end
+
+  def update_if_seen
+    inc = 2
+    while @seen.include?(@anchor)
+      if inc == 2
+        @anchor += "-" + inc.to_s
+      else
+        @anchor.sub!(/-\d+$/, "-" + inc.to_s)
+      end
+      inc += 1
+    end
+    @seen << @anchor
   end
 
   def set_start

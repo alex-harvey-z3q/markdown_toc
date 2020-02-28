@@ -29,4 +29,11 @@ describe ToCWriter do
       ToCWriter.new('spec/fixtures/test_case_4/SOURCE.md', 2, 2).write
     }.to output(expected).to_stdout
   end
+
+  it 'test case #5 - contains duplicated refs' do
+    expected = File.read('spec/fixtures/test_case_5/TOC.md')
+    expect {
+      ToCWriter.new('spec/fixtures/test_case_5/SOURCE.md').write
+    }.to output(expected).to_stdout
+  end
 end
