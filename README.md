@@ -14,12 +14,50 @@ You only require a system Ruby. Tested on Ruby versions 1.9 through to 2.7.
 
 ## Installation
 
-Install by copying the script from the master branch:
+Install by running this script which copies the script from the master branch (only requires Bash, tries user install if not root):
 
-```text
-▶ curl \
-  https://raw.githubusercontent.com/alexharv074/markdown_toc/master/mdtoc.rb -o \
-  /usr/local/bin/mdtoc.rb
+```bash
+#!/bin/bash
+set -x
+unset INSTALL_DIR
+SCRIPT_NAME="mdtoc.rb"
+i_am_root() { test `id -u` -eq 0; }
+check_dir_in_path() {
+    IFS=: read -r -d '' -a PATH_ARRAY < <(printf '%s:\0' "$PATH")
+    for p in "${PATH_ARRAY[@]}"; do
+        if [[ "$p" =~ "$1{/,}" ]] && test -d "$1"; then
+            return 0
+        fi
+    done
+}
+# Try to install to /opt/bin then /usr/local/bin if possible.
+if i_am_root; then
+    if check_dir_in_path "/opt/bin"; then
+        INSTALL_DIR="/opt/bin"
+    elif check_dir_in_path "/usr/local/bin"; then
+        INSTALL_DIR="/usr/local/bin"
+    else
+        >&2 echo "Cannot install, no suitable place to put $SCRIPT_NAME!"
+        exit 1
+    fi
+fi
+
+# Try to install to user's homedir if possible.
+LOCALBIN="$HOME/.local/bin"
+if ! i_am_root; then
+    if check_dir_in_path "$LOCALBIN"; then
+        INSTALL_DIR="$LOCALBIN"
+    else
+    (>&2 echo "Cannot install locally, no $LOCALBIN!" && exit 2)
+    fi
+fi
+
+INSTALL_LOCATION="$INSTALL_DIR/$SCRIPT_NAME"
+URL="https://raw.githubusercontent.com/alexharv074/markdown_toc/master/mdtoc.rb"
+curl --fail "$URL" -o "$INSTALL_LOCATION" && chmod +x "$INSTALL_LOCATION"
+
+set +x
+exit 0
 ```
 
 ## Usage
