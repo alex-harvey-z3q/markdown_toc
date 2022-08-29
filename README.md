@@ -16,6 +16,17 @@ You only require a system Ruby. Tested on Ruby versions 1.9 through to 2.7.
 
 Install by copying the script from the master branch:
 
+## Docker install
+To build the docker file run.
+```bash
+docker build .
+```
+
+To run the docker file against your README. CD into your directory and run (this assumes your readme file is README.md)
+```bash
+docker run -v `pwd`:/host <name of image>
+```
+
 ```text
 ▶ curl \
   https://raw.githubusercontent.com/alexharv074/markdown_toc/master/mdtoc.rb -o \
