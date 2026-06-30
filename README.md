@@ -6,7 +6,7 @@ Release 1.0.2.
 
 ## Overview
 
-This script can be used to generate a Markdown Table of Contents from a Markdown source document. For more information, see my related [blog post](https://alexharv074.github.io/2018/08/28/auto-generating-markdown-tables-of-contents.html).
+This script can be used to generate a Markdown Table of Contents from a Markdown source document. For more information, see my related [blog post](https://alex-harvey-z3q.github.io/2018/08/28/auto-generating-markdown-tables-of-contents.html).
 
 ## Dependencies
 
