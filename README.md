@@ -14,12 +14,25 @@ You only require a system Ruby. Tested on Ruby versions 1.9 through to 2.7.
 
 ## Installation
 
-Install by copying the script from the master branch:
+Install from a checkout:
+
+```text
+▶ ./install.sh
+```
+
+The installer copies `mdtoc.rb` to `/opt/bin` or `/usr/local/bin` when run as root, and to `$HOME/.local/bin` otherwise. To choose a destination explicitly:
+
+```text
+▶ INSTALL_DIR=/usr/local/bin ./install.sh
+```
+
+Or install manually by copying the script from the master branch:
 
 ```text
 ▶ curl \
-  https://raw.githubusercontent.com/alexharv074/markdown_toc/master/mdtoc.rb -o \
+  https://raw.githubusercontent.com/alex-harvey-z3q/markdown_toc/master/mdtoc.rb -o \
   /usr/local/bin/mdtoc.rb
+▶ chmod 0755 /usr/local/bin/mdtoc.rb
 ```
 
 ## Usage
